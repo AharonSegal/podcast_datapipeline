@@ -1,0 +1,12 @@
+import speech_recognition as sr
+print(sr.__version__)
+r = sr.Recognizer()
+
+file_audio = sr.AudioFile('download (1).wav')
+
+with file_audio as source:
+   audio_text = r.record(source)
+
+print(type(audio_text))
+text = r.recognize_google(audio_text)
+print(text)
